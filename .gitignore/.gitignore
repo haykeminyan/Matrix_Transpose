@@ -9,12 +9,17 @@ using namespace std;
 int main(){
   
 int t=clock();
-    #define N 5
+    #define N 500
   
 int **A,**B;
 //Индексные переменные:
 int i,j,k;
 
+
+//Первая матрица:
+//static int A[N][N];
+//Вторая матрица:
+//static int B[N][N];
 
 A=new  int*[N];
 for(i=0;i<N;i++)
@@ -22,8 +27,6 @@ A[i]=new  int[N];
 B=new int*[N];
 for(i=0;i<N;i++)
 B[i]=new  int[N];
-
-
 srand(time(NULL));
 for (i = 0; i < N; i++)
     for (j = 0; j < N; j++)
@@ -69,10 +72,11 @@ for (int i = 0; i<N; i++)
 cout<<"\n"<<endl;
   
   float fTimeStop = clock()/(float)CLOCKS_PER_SEC; 
-  printf("Длительность процесса %.13f секунд\n", fTimeStop-fTimeStart); 
-  
+  cout<<"Длительность процесса" <<fTimeStop-fTimeStart<<"секунд\n";
+  cout<<endl;
+  delete[]A;
+  delete[]B;
   getchar(); 
  return 0;
  
 }
- 
